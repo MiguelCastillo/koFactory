@@ -3,11 +3,13 @@ koFactory
 
 Lightweight factory that will create a KnckoutJS ViewModel with all the corresponding koObservables and koObservableArrays.  You can pass in an Array, a String, or a JSON object, and you will get a ViewModel ready to be consumed!
 
-* The purpose for koFactory is to simple and unobtrusive.  There is no extra annotation or properties added to the created ViewModels so that you can use koFactory to supplement the code you already have in place.
+Highlights:
+
+* The purpose for koFactory is to be simple and unobtrusive.  There is no extra annotation or properties added to the created ViewModels, so that you can use koFactory to supplement the code you already have in place.
 
 * koFactory is AMD compliant.  It will also run just fine if you have the more traditional script tag approach.
 
-* It will merge/update new data into a ViewModel; either created by koFactory or your handcrafted.  So, if you new data you want to push into your ViewModel, you can use koFactory to do the job.
+* koFactory will also update and merge new data into a ViewModel; either created by koFactory or your handcrafted ones.  So, if you new data you want to push into your ViewModel, you can use koFactory to do the job.
 
 
 API
