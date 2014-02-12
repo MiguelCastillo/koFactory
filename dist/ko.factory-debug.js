@@ -128,9 +128,9 @@
   };
 
 
-  koFactory.bind = function( viewModel, el ) {
+  koFactory.bind = function( el, viewModel ) {
     if ( jQuery ) {
-      jQuery($el).each(function(index, iel) {
+      jQuery(el).each(function(index, iel) {
         ko.applyBindings(viewModel, iel);
       });
     }
