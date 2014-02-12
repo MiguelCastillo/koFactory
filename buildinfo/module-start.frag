@@ -7,6 +7,6 @@
     define(["ko"], factory);
   } else {
     // Do browser support
-    root.koFactory = factory(window.ko);
+    root.koFactory = factory(root.ko);
   }
 }(this, function(ko) {
