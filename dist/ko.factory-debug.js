@@ -17,6 +17,8 @@
   }
 }(this, function(ko) {
 
+  var jQuery = this.jQuery;
+
   function koFactory(data, target, settings) {
     return koFactory.serialize( data, target, settings );
   }
@@ -126,17 +128,27 @@
   };
 
 
-  koFactory.bind = function( data, $el ) {
-    $($el).each(function(index, el) {
-      ko.applyBindings(data, el);
-    });
+  koFactory.bind = function( viewModel, el ) {
+    if ( jQuery ) {
+      jQuery($el).each(function(index, iel) {
+        ko.applyBindings(viewModel, iel);
+      });
+    }
+    else {
+      ko.applyBindings(viewModel, el);
+    }
   };
 
 
-  koFactory.unbind = function( $el ) {
-    $($el).each(function(index, el) {
-      ko.cleanNode(el);
-    });
+  koFactory.unbind = function( el ) {
+    if ( jQuery ) {
+      jQuery(el).each(function(index, iel) {
+        ko.cleanNode(iel);
+      });
+    }
+    else {
+      ko.cleanNode(iel);
+    }
   };
 
 
