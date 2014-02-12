@@ -1,0 +1,30 @@
+{
+  "name": "kofactory",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Miguel Castillo <mahchagnu@gmail.com>",
+  "title": "koFactory",
+  "description": "Create KnockoutJs view models from JSON",
+  "homepage": "https://github.com/MiguelCastillo/koFactory",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/MiguelCastillo/koFactory.git"
+  },
+  "bugs": {
+    "email": "manchagnu@gmail.com",
+    "url": "https://github.com/MiguelCastillo/koFactory/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-requirejs": "~0.4.1"
+  },
+  "main": "dist/ko.factory.js",
+  "keywords": [
+    "ko",
+    "ko js",
+    "knockout js",
+    "knockoutjs",
+    "ko factory",
+    "kofactory"
+  ]
+}

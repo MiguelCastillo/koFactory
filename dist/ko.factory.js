@@ -1,0 +1,6 @@
+/**
+ * koFactory Copyright (c) 2014 Miguel Castillo.
+ * Licensed under MIT
+ */
+
+(function(e,t){typeof require=="function"&&typeof exports=="object"&&typeof module=="object"?module.exports=t(require("ko")):typeof define=="function"&&define.amd?define(["ko"],t):e.koFactory=t(window.ko)})(this,function(e){function t(e,n,r){return t.serialize(e,n,r)}return t.primitiveTypes={"undefined":!0,"boolean":!0,number:!0,string:!0},t.getType=function(e){if(e instanceof Array)return"array";var n=typeof e;if(t.primitiveTypes.hasOwnProperty(n))return"primitive";if(n==="object")return"object";throw"Invalid data type"},t.array=function(n,r,i){var s=0,o=n.length,u=!1,a=e.isObservable(r);i=i||{},o&&(u=t.getType(n[0]));for(;s<o;s++)n[s]=t[u](n[s],r,i);return a===!0?(r(n),r):e.observableArray(n)},t.primitive=function(t,n,r){var i=e.isObservable(n);return i===!0?(n(t),n):e.observable(t)},t.object=function(e,n,r){var i,s,o,u=!1;n=n||{},r=r||{};for(var a in e){if(e.hasOwnProperty(a)===!1)continue;u=n.hasOwnProperty(a),s=e[a],i=t.getType(s),o=t[i](s,n[a],r[a]),u===!1&&(n[a]=o)}return n},t.serialize=function(e,n,r){var i=t.getType(e);return t[i](e,n,r)},t.deserialize=function(t){return e.toJS(t)},t.bind=function(t,n){$(n).each(function(n,r){e.applyBindings(t,r)})},t.unbind=function(t){$(t).each(function(t,n){e.cleanNode(n)})},t.ko=e,t});
