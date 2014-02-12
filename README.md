@@ -24,6 +24,59 @@ API
 <code>koFactory.unbind</code> will take in a jQuery object or a DOM element as its first parameter, and it will call cleanNode for you.  Again, the only good reason for this interface is that it gracefully iterates through jQuery objects with elements.
 
 
+Examples
+=========
+
+* Create an observable string
+``` javascript
+var viewModel = koFactory("Hello world");
+console.log(viewModel()); //=> Will print "Hello world"
+
+viewModel("I say, " + viewModel());
+console.log(viewModel()); //=> Will print "I say, Hello world"
+```
+
+* Create an observable object
+``` javascript
+var data = {
+  "simple": "property"
+};
+
+var viewModel = koFactory(data);
+console.log(viewModel.simple()); //=> Will print "property"
+```
+
+* Update a ViewModel
+``` javascript 
+var data1 = {
+  "simple1": "Yes, simple string"
+};
+
+var viewModel = koFactory(data1);
+console.log(viewModel.simple1()); //=> Will print "Yes, simple string"
+
+var data2 = {
+  "simple1": "Yes, new data",
+  "simple2": "New property"
+};
+
+koFactory(data2, viewModel);
+console.log(viewModel.simple1()); //=> Will print "Yes, new data"
+console.log(viewModel.simple2()); //=> Will print "New property"
+```
+
+* Bind ViewModel to jQuery object.  This example shows a very simple jQuery object with a single element, but if there were multiple elements, koFactory will iterate through them and will do the appropriate binding.
+``` javascript
+var data = {
+  "simple": "property"
+};
+
+var viewModel = koFactory(data);
+var $el = $("<div data-bind='text: simple'></div>");
+koFactory.bind($el, viewModel);
+```
+
+
 Licensing
 =========
 
