@@ -147,7 +147,7 @@
       });
     }
     else {
-      ko.cleanNode(iel);
+      ko.cleanNode(el);
     }
   };
 
