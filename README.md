@@ -65,7 +65,7 @@ console.log(viewModel.simple1()); //=> Will print "Yes, new data"
 console.log(viewModel.simple2()); //=> Will print "New property"
 ```
 
-* Bind ViewModel to jQuery object.  This example shows a very simple jQuery object with a single element, but if there were multiple elements, koFactory will iterate through them and will do the appropriate binding.
+* Bind ViewModel to jQuery object.  This example shows a very simple jQuery object with a single element, but if there were multiple elements, koFactory would iterate through them and will do the appropriate binding.
 ``` javascript
 var data = {
   "simple": "property"
