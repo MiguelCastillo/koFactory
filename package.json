@@ -4,7 +4,7 @@
   "license": "MIT",
   "author": "Miguel Castillo <mahchagnu@gmail.com>",
   "title": "koFactory",
-  "description": "Create KnockoutJs view models from JSON",
+  "description": "Simply create KnockoutJS ViewModels",
   "homepage": "https://github.com/MiguelCastillo/koFactory",
   "repository": {
     "type": "git",

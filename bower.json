@@ -1,0 +1,25 @@
+{
+  "name": "koFactory",
+  "version": "0.0.1",
+  "homepage": "https://github.com/MiguelCastillo/koFactory",
+  "authors": [
+    "Miguel Castillo <manchagnu@gmail.com>"
+  ],
+  "description": "Simply create KnockoutJS ViewModels",
+  "main": "dist/ko.factory.js",
+  "keywords": [
+    "ko",
+    "knockoutjs",
+    "kopromise",
+    "ko",
+    "factory"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
