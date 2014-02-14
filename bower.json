@@ -21,6 +21,9 @@
     "bower_components",
     "tests",
     "buildinfo",
-    "src"
+    "src",
+    "Gruntfile.js",
+    "package.json",
+    "bower.json"
   ]
 }
