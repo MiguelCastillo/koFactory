@@ -23,7 +23,6 @@
     "buildinfo",
     "src",
     "Gruntfile.js",
-    "package.json",
-    "bower.json"
+    "package.json"
   ]
 }
