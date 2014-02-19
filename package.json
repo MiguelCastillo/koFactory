@@ -1,6 +1,6 @@
 {
-  "name": "kofactory",
-  "version": "0.0.1",
+  "name": "ko.factory",
+  "version": "0.0.2",
   "license": "MIT",
   "author": "Miguel Castillo <mahchagnu@gmail.com>",
   "title": "koFactory",
