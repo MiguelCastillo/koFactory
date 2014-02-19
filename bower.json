@@ -19,13 +19,12 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
-    "dist",
     "node_modules",
     "bower_components",
+    "test",
     "tests",
     "buildinfo",
     "src",
-    "Gruntfile.js",
-    "package.json"
+    "Gruntfile.js"
   ]
 }
