@@ -15,7 +15,7 @@ Highlights:
 API
 =========
 
-<code>koFactory</code> is the starting point.  It's a function that takes in a <code>data</code> as its first argument, and returns a ViewModel.  You can then call koFactory again with new <code>data</code> and the ViewModel as the second parameter, and new values will be updated and new properties will be merged in.  <code>koFactory</code> is internally calling <code>koFactory.serailize</code>, so feel free to just call <code>koFactory.serialize</code>.  The data types you can pass in are Strings, Arrays, JSON, or any other type of object that can be converted to an observable.
+<code>koFactory</code> is the starting point.  It's a function that takes in a <code>data</code> as its first argument, and returns a ViewModel.  You can then call koFactory again with new <code>data</code> and the ViewModel as the second parameter. Changed properties will be updated and new properties will be merged in.  <code>koFactory</code> is internally calling <code>koFactory.serailize</code>, so feel free to just call <code>koFactory.serialize</code>.  The data types you can pass in are Strings, Arrays, JSON, or any other type of object that can be converted to an observable.
 
 <code>koFactory.deserialize</code> will take a ViewModel and will strip out all the koObservable/koObservableArray notations, returning data that's ready for a stream (ajax, file system)...  * More to come on this interface. I am planning on adding the ability to filter out properties/functions that should not be included in the final object.
 
