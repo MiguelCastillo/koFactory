@@ -81,6 +81,9 @@ Installation
 =========
 
 Find it on bower as koFactory or directly download it from git in the dist folder, and happy ViewModel making!
+``` javascript
+> bower install koFactory
+```
 
 
 Licensing
