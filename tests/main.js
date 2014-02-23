@@ -4,15 +4,15 @@
  */
 
 
-define(["tests/libs/js/rjasmine", "tests/libs/js/jquery-1.11.0.min"], function(rjasmine) {
+define(["tests/lib/js/rjasmine", "tests/lib/js/jquery-1.11.0.min"], function(rjasmine) {
 
   // Configure requirejs globably to make spromise src available
   // in all unit tests
   requirejs.config({
     paths: {
       "koFactory": "dist/ko.factory-debug",
-      "ko": "tests/libs/js/knockout-3.0.0",
-      "text": "tests/libs/js/text"
+      "ko": "tests/lib/js/knockout-3.0.0",
+      "text": "tests/lib/js/text"
     }
   });
 
