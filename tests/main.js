@@ -4,37 +4,37 @@
  */
 
 
-define(["tests/lib/js/rjasmine", "tests/lib/js/jquery-1.11.0.min"], function(rjasmine) {
+define(["tests/lib/rjasmine/dist/rjasmine", "tests/lib/jquery/dist/jquery.min"], function(RJasmine) {
 
   // Configure requirejs globably to make spromise src available
   // in all unit tests
   requirejs.config({
     paths: {
       "koFactory": "dist/ko.factory-debug",
-      "ko": "tests/lib/js/knockout-3.0.0",
+      "ko": "tests/lib/knockout.js/knockout",
       "text": "tests/lib/js/text"
     }
   });
 
 
-  var _rjasmine = new rjasmine({
+  var rjasmine = new RJasmine({
     reporters: {
-      html_reporter: true,
-      console_reporter: true
+      html: true,
+      console: true
     }
   });
 
   // Make the api available globally...
-  rjasmine.extend(this, _rjasmine._api);
-  this.rjasmine = rjasmine;
+  RJasmine.extend(this, rjasmine._api);
+  this.rjasmine = RJasmine;
 
   // rjasmine needs to wait for reporters to be loaded...
-  _rjasmine.ready(function() {
+  rjasmine.ready(function() {
     require([
       "tests/specs/array",
       "tests/specs/object",
       "tests/specs/mixed"
-    ], _rjasmine.execute);
+    ], rjasmine.execute);
   });
 });
 

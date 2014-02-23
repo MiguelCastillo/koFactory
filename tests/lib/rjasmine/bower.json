@@ -1,0 +1,32 @@
+{
+  "name": "rjasmine",
+  "version": "0.0.2",
+  "homepage": "https://github.com/MiguelCastillo/rjasmine",
+  "authors": [
+    "Miguel Castillo <manchagnu@gmail.com>"
+  ],
+  "description": "AMD and Promise support for Jasmine",
+  "main": "dist/rjasmine.js",
+  "keywords": [
+    "jasmine",
+    "rjasmine",
+    "unittest",
+    "unittests"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "Gruntfile.js",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "lib",
+    "buildinfo",
+    "src"
+  ],
+  "devDependencies": {
+    "requirejs": "",
+    "almond": ""
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "rjasmine",
+  "version": "0.0.2",
+  "license": "MIT",
+  "author": "Miguel Castillo <mahchagnu@gmail.com>",
+  "title": "rjasmine",
+  "description": "AMD and Promise support for Jasmine",
+  "homepage": "https://github.com/MiguelCastillo/rjasmine",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/MiguelCastillo/rjasmine.git"
+  },
+  "bugs": {
+    "email": "manchagnu@gmail.com",
+    "url": "https://github.com/MiguelCastillo/rjasmine/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-requirejs": "~0.4.1"
+  }
+}
