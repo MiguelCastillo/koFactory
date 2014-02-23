@@ -1,7 +1,7 @@
 define([
   "koFactory",
-  "text!json/object.json",
-  "text!json/objectExt.json"
+  "text!tests/json/object.json",
+  "text!tests/json/objectExt.json"
 ], function(koFactory, data, dataExt) {
 
   var ko = koFactory.ko;

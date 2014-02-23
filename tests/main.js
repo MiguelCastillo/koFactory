@@ -4,15 +4,15 @@
  */
 
 
-define(["libs/js/rjasmine", "libs/js/jquery-1.11.0.min"], function(rjasmine) {
+define(["tests/libs/js/rjasmine", "tests/libs/js/jquery-1.11.0.min"], function(rjasmine) {
 
   // Configure requirejs globably to make spromise src available
   // in all unit tests
   requirejs.config({
     paths: {
-      "koFactory": "../dist/ko.factory-debug",
-      "ko": "libs/js/knockout-3.0.0",
-      "text": "libs/js/text"
+      "koFactory": "dist/ko.factory-debug",
+      "ko": "tests/libs/js/knockout-3.0.0",
+      "text": "tests/libs/js/text"
     }
   });
 
@@ -31,9 +31,9 @@ define(["libs/js/rjasmine", "libs/js/jquery-1.11.0.min"], function(rjasmine) {
   // rjasmine needs to wait for reporters to be loaded...
   _rjasmine.ready(function() {
     require([
-      "specs/array",
-      "specs/object",
-      "specs/mixed"
+      "tests/specs/array",
+      "tests/specs/object",
+      "tests/specs/mixed"
     ], _rjasmine.execute);
   });
 });
