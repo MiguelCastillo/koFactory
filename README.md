@@ -9,7 +9,7 @@ Highlights:
 
 * koFactory is AMD compliant.  It will also run just fine if you have the more traditional script tag approach.
 
-* koFactory will also update and merge new data into a ViewModel; either created by koFactory or your handcrafted ones.  So, if you new data you want to push into your ViewModel, you can use koFactory to do the job.
+* koFactory will also update and merge new data into a ViewModel; either created by koFactory or your handcrafted ones.  So, if you have new data you want to push into your ViewModel, you can use koFactory to do the job.
 
 
 API
