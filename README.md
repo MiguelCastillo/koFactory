@@ -76,7 +76,7 @@ var $el = $("<div data-bind='text: simple'></div>");
 koFactory.bind($el, viewModel);
 ```
 
-* A small sample of a more a real use case with server data.
+* A small sample of a more real use case with server data.
 ``` javascript
 
 // Interface to get a model. In real life, this would be its own module, but let's just play along
