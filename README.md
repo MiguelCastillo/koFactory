@@ -76,14 +76,59 @@ var $el = $("<div data-bind='text: simple'></div>");
 koFactory.bind($el, viewModel);
 ```
 
+* A small sample of a more a real use case with server data.
+``` javascript
+
+// Interface to get a model. In real life, this would be its own module, but let's just play along
+function getViewModel() {
+  // Convert the default properties to a view model that gets returned.
+  var viewmodel = koFactory({
+    greeting: "",
+    name: ""
+  });
+
+  // Let's expose a function in the view model the UI can call
+  viewmodel.sayGreeting = function() {
+    // This...
+    var data = koFactory.deserialize(viewmodel);
+    console.log(data.hello, data.name);
+    
+    // Or this...
+    console.log(viewmodel.hello(), viewmodel.name());
+  };
+
+  return viewmodel;
+}
+
+// Create me a view model
+var viewmodel = getViewModel();
+
+// Bind a view model to the body, but it can just be any element in the DOM.
+koFactory.bind( $("body"), viewmodel );
+
+// Update view model with server data
+$.ajax("http://myservice").done(function(data) {
+  // Push any changes to the view model
+  koFactory(data, viewmodel);
+});
+
+// Update server with view model data
+$.ajax({
+  "url": "http://myservice",
+  "method": "PUT",
+  "data": koFactory.deserialize(viewmodel)
+});
+```
+
 
 Installation
 =========
 
-Find it on bower as koFactory or directly download it from git in the dist folder, and happy ViewModel making!
 ``` javascript
 > bower install koFactory
 ```
+Or download it from the dist folder.<br>
+And happy ViewModel making!
 
 
 Licensing
