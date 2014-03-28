@@ -91,10 +91,10 @@ function getViewModel() {
   viewmodel.sayGreeting = function() {
     // This...
     var data = koFactory.deserialize(viewmodel);
-    console.log(data.hello, data.name);
+    console.log(data.greeting, data.name);
     
     // Or this...
-    console.log(viewmodel.hello(), viewmodel.name());
+    console.log(viewmodel.greeting(), viewmodel.name());
   };
 
   return viewmodel;
