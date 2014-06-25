@@ -15,7 +15,7 @@ Highlights:
 API
 =========
 
-<code>koFactory</code> function takes in <code>data</code> as its first argument and returns a ViewModel.  The data types you can pass in are Strings, Arrays, JSON, or any other type of object that can be converted to a ko observable.  You can subsequently call koFactory with new <code>data</code>, and a previously created ViewModel as the second parameter, at which point koFactory will update and merge new values in ViewModel.
+<code>koFactory</code> function takes in <code>data</code> as its first argument and returns a ViewModel.  The data types you can pass in are Strings, Arrays, JSON, or any other type of object that can be ko observable.  You can subsequently call koFactory with new <code>data</code> and a previously created ViewModel as the second parameter, at which point koFactory will update and merge new values in ViewModel.
 
 <code>koFactory.serailize</code> function that creates and updates ViewMdels. Calling <code>koFactory</code> is exactly the same as calling <codey>koFactory.serialize</code>.
 
