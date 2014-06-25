@@ -1,11 +1,15 @@
-  var jQuery = this.jQuery;
+(function(ko, $) {
+  "use strict";
 
-  function koFactory(data, target, settings) {
-    return koFactory.serialize( data, target, settings );
+  function factory(data, target, settings) {
+    return factory.serialize( data, target, settings );
   }
 
+  factory.ko = ko;
+  factory.$  = $;
 
-  koFactory.primitiveTypes = {
+
+  factory.primitiveTypes = {
     "undefined": true,
     "boolean": true,
     "number": true,
@@ -13,13 +17,13 @@
   };
 
 
-  koFactory.getType = function(data) {
+  factory.getType = function(data) {
     if (data instanceof Array) {
       return "array";
     }
 
     var typeOf = typeof data;
-    if ( koFactory.primitiveTypes.hasOwnProperty(typeOf) ) {
+    if (factory.primitiveTypes.hasOwnProperty(typeOf)) {
       return "primitive";
     }
     else if (typeOf === "object") {
@@ -30,50 +34,50 @@
   };
 
 
-  koFactory.array = function (data, target, settings) {
+  factory.array = function (data, target, settings) {
     var i = 0,
         length = data.length,
         type = false,
-        update = ko.isObservable(target);
+        update = factory.ko.isObservable(target);
 
     settings = settings || {};
 
-    if ( length ) {
+    if (length) {
       // We only need to get the type once; items in an
       // arrays are of the same data type.
-      type = koFactory.getType(data[0]);
+      type = factory.getType(data[0]);
     }
 
-    for ( ; i < length; i++ ) {
-      data[i] = koFactory[type](data[i], target, settings);
+    for (; i < length; i++) {
+      data[i] = factory[type](data[i]);
     }
 
-    if ( update === true ) {
+    if (update === true) {
       target(data);
       return target;
     }
 
-    return ko.observableArray(data);
+    return factory.ko.observableArray(data);
   };
 
 
-  koFactory.primitive = function(data, target, settings) {
-    var update = ko.isObservable(target);
-    if ( update === true ) {
+  factory.primitive = function(data, target, settings) {
+    var update = factory.ko.isObservable(target);
+    if (update === true) {
       target(data);
       return target;
     }
 
-    return ko.observable(data);
+    return factory.ko.observable(data);
   };
 
 
-  koFactory.object = function(data, target, settings) {
-    var type, item, value, update = false;
+  factory.object = function(data, target, settings) {
     target = target || {};
     settings = settings || {};
+    var type, item, value, update = false;
 
-    for ( var i in data ) {
+    for (var i in data) {
       // If i isn't a property of data, then we will continue on to the next property
       if (data.hasOwnProperty(i) === false) {
         continue;
@@ -81,8 +85,8 @@
 
       update = target.hasOwnProperty(i);
       item   = data[i];
-      type   = koFactory.getType(item);
-      value  = koFactory[type](item, target[i], settings[i]);
+      type   = factory.getType(item);
+      value  = factory[type](item, target[i], settings[i]);
 
       if (update === false) {
         target[i] = value;
@@ -98,39 +102,40 @@
   *                 or will be merged into target.
   * @param <Object> target - optional object where data will be copied into.
   */
-  koFactory.serialize = function(data, target, settings) {
-    var type = koFactory.getType(data);
-    return koFactory[type](data, target, settings);
+  factory.serialize = function(data, target, settings) {
+    var type = factory.getType(data);
+    return factory[type](data, target, settings);
   };
 
 
-  koFactory.deserialize = function(data) {
-    return ko.toJS(data);
+  factory.deserialize = function(data) {
+    return factory.ko.toJS(data);
   };
 
 
-  koFactory.bind = function( el, viewModel ) {
-    if ( jQuery ) {
-      jQuery(el).each(function(index, iel) {
-        ko.applyBindings(viewModel, iel);
+  factory.bind = function(el, viewModel) {
+    if (factory.$) {
+      factory.$(el).each(function(index, iel) {
+        factory.ko.applyBindings(viewModel, iel);
       });
     }
     else {
-      ko.applyBindings(viewModel, el);
+      factory.ko.applyBindings(viewModel, el);
     }
   };
 
 
-  koFactory.unbind = function( el ) {
-    if ( jQuery ) {
-      jQuery(el).each(function(index, iel) {
-        ko.cleanNode(iel);
+  factory.unbind = function(el) {
+    if (factory.$) {
+      factory.$(el).each(function(index, iel) {
+        factory.ko.cleanNode(iel);
       });
     }
     else {
-      ko.cleanNode(el);
+      factory.ko.cleanNode(el);
     }
   };
 
 
-  koFactory.ko = ko;
+  return factory;
+}.apply(this, [ko, $]));
