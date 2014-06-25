@@ -19,7 +19,7 @@ API
 
 <code>koFactory.serailize</code> function that creates and updates ViewMdels. Calling <code>koFactory</code> is exactly the same as calling <codey>koFactory.serialize</code>.
 
-<code>koFactory.deserialize</code> will take a ViewModel and will strip out all the koObservable/koObservableArray notations, returning data that's ready for a stream (ajax, file system)...  * More to come on this interface. I am planning on adding the ability to filter out properties/functions that should not be included in the final object.
+<code>koFactory.deserialize</code> will take a ViewModel and will strip out all the koObservable/koObservableArray notations, returning data that's ready for a stream (ajax, file system)...
 
 <code>koFactory.bind</code> will take in a jQuery object or a DOM element as the first parameter and a ViewModel as the second parameter, and it will do the applyBinding for you.  The one real good reason for this is that it gracefully iterates through jQuery objects with multiple DOM elements in it, and binds them to the ViewModel.
 
