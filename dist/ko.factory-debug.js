@@ -6,11 +6,19 @@
  */
 
 
+/**
+ * koFactory Copyright (c) 2014 Miguel Castillo.
+ * Licensed under MIT
+ *
+ * https://github.com/MiguelCastillo/koFactory
+ */
+
+
 (function (root, factory) {
-  if (typeof require === 'function' && typeof exports === 'object' && typeof module === 'object') {
+  if (typeof require === "function" && typeof exports === "object" && typeof module === "object") {
     // CommonJS support
-    module.exports = factory(require('ko'));
-  } else if (typeof define === 'function' && define.amd) {
+    module.exports = factory(require("ko"));
+  } else if (typeof define === "function" && define.amd) {
     // Do AMD support
     define(["ko"], factory);
   } else {
@@ -18,9 +26,8 @@
     root.koFactory = factory(root.ko);
   }
 }(this, function(ko) {
-var globals = this;
-return function() { // This call is to get the proper context with the correct dependencies
-return (void 0) ||  // This is to allow the return to properly execute the factory function
+
+return false ||  // This is to allow the return to properly execute the factory function
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 (function(ko, $) {
@@ -86,7 +93,7 @@ return (void 0) ||  // This is to allow the return to properly execute the facto
   };
 
 
-  factory.primitive = function(data, target, settings) {
+  factory.primitive = function(data, target /*, settings*/) {
     var update = factory.ko.isObservable(target);
     if (update === true) {
       target(data);
@@ -123,10 +130,10 @@ return (void 0) ||  // This is to allow the return to properly execute the facto
 
 
   /**
-  * @param <Object> data - is the new data that will either generate a new view model
-  *                 or will be merged into target.
-  * @param <Object> target - optional object where data will be copied into.
-  */
+   * @param <Object> data - is the new data that will either generate a new view model
+   *                 or will be merged into target.
+   * @param <Object> target - optional object where data will be copied into.
+   */
   factory.serialize = function(data, target, settings) {
     var type = factory.getType(data);
     return factory[type](data, target, settings);
@@ -166,5 +173,4 @@ return (void 0) ||  // This is to allow the return to properly execute the facto
 }.apply(this, [ko, $]));
 
 /////////////////////////////////////////////////////////////////////////////////////////////
-}.call({ko: ko, $: $, globals: globals});
-}));
+}.bind(this)));

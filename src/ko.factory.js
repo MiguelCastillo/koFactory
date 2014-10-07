@@ -61,7 +61,7 @@
   };
 
 
-  factory.primitive = function(data, target, settings) {
+  factory.primitive = function(data, target /*, settings*/) {
     var update = factory.ko.isObservable(target);
     if (update === true) {
       target(data);
@@ -98,10 +98,10 @@
 
 
   /**
-  * @param <Object> data - is the new data that will either generate a new view model
-  *                 or will be merged into target.
-  * @param <Object> target - optional object where data will be copied into.
-  */
+   * @param <Object> data - is the new data that will either generate a new view model
+   *                 or will be merged into target.
+   * @param <Object> target - optional object where data will be copied into.
+   */
   factory.serialize = function(data, target, settings) {
     var type = factory.getType(data);
     return factory[type](data, target, settings);
