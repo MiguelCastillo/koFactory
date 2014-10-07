@@ -1,11 +1,3 @@
-/**
- * koFactory Copyright (c) 2014 Miguel Castillo.
- * Licensed under MIT
- *
- * https://github.com/MiguelCastillo/koFactory
- */
-
-
 (function (root, factory) {
   if (typeof require === "function" && typeof exports === "object" && typeof module === "object") {
     // CommonJS support
