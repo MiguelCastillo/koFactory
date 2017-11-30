@@ -15,8 +15,8 @@
     "url": "https://github.com/MiguelCastillo/koFactory/issues"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-requirejs": "~0.4.1"
+    "grunt": "~1.0.1",
+    "grunt-contrib-requirejs": "~1.0.0"
   },
   "main": "dist/ko.factory.js",
   "keywords": [
