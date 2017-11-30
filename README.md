@@ -1,6 +1,8 @@
 koFactory
 =========
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/MiguelCastillo/koFactory.svg)](https://greenkeeper.io/)
+
 Lightweight factory that will create a KnckoutJS ViewModel with all the corresponding koObservables and koObservableArrays.  You can pass in an Array, a String, or a JSON object, and you will get a ViewModel ready to be consumed!
 
 Highlights:
